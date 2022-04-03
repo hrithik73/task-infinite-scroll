@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+## Infinite Scrolling Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Features
 
-## Available Scripts
+- Infinte Scrolling
+- Use download_url Key for Cell Item Thumbnail
+- Show Both Image and Author Name
+- Wherever user stops for more than 5 seconds in last 2 cell item of the list, Write "I am the chosen one" + "Value of ID" underneath Author Name
+  - Click on Detailed view of Image and show it In Another screen (DETAILED API)
+    - Step 1: Open Detail view opens right away with download_Url value received from List Image
+    - Step 2: Call Detailed API and Replace placeholder image with url key image (Only after calling Detailed API, not from List Images API)
+- Click back to Go back on List screen
 
-In the project directory, you can run:
+### Rules/Conventions to follow
 
-### `yarn start`
+- Write loosely coupled code so that it's scalable and robust (Use Architecture i.e. MVVM or MVC as being guided in Training).
+- Use design patterns, Solid patterns, Abstraction, Encapsulation and other good concepts of computer science
+- Do not use any external library for even single line of code
+- Make a web page using html5 and sass only (Optional for Web)
+- Do not use Media Query or Bootstrap (Optional for Web)
+- Extra marks for reusability of HTML, CSS (Optional for Web)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### APIs
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### List Images
 
-### `yarn test`
+Get a list of images by using the `/v2/list` endpoint.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+https://picsum.photos/v2/list
 
-### `yarn build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The API will return 30 items per page by default.
+To request another page, use the ?page parameter.
+To change the amount of items per page, use the ?limit parameter.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+https://picsum.photos/v2/list?page=2&limit=100
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `yarn eject`
+#### Image Details
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Get information about a specific image by using the `/id/{id}/info` endpoint.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+https://picsum.photos/id/0/info
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Please don't judge my design skill :)
