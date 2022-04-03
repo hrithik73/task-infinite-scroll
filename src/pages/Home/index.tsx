@@ -10,17 +10,22 @@ const Home = () => {
   const [page, setPage] = useState(1)
   const { data, loading, noData, fetchMoreData } = useFetch()
 
-  window.onscroll = () => {
+  const onScrollHandler = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
     ) {
       if (!noData) {
+        console.log("fetching more data")
         fetchMoreData(page)
         setPage(page + 1)
       }
     }
   }
+  // For Desktop
+  window.onscroll = onScrollHandler
+  // For Phones
+  window.ontouchmove = onScrollHandler
 
   useEffect(() => {
     fetchMoreData(page)
@@ -29,7 +34,7 @@ const Home = () => {
 
   return (
     <div className="home_container">
-      <h1>Infinite Scrolling</h1>
+      <h1>Infinite Scrolling Event</h1>
       {data.map((item: any) => {
         return (
           <Card
