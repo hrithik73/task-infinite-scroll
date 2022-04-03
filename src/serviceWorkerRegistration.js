@@ -127,7 +127,7 @@ function registerValidSW(swUrl, config) {
               // toast.info('Update available! To update, refresh this tab.', {
               //   toastId: 'appUpdateAvailable',
               //   autoClose: false
-              // })
+              // }) 
               console.log("Update available! To update, refresh this tab.")
               // Execute callback
               if (config && config.onUpdate) {
@@ -149,8 +149,7 @@ function registerValidSW(swUrl, config) {
           }
         };
       };
-    }).
-    catch((error) => {
+    }).catch((error) => {
       console.error(
         'Error during service worker registration:',
         error
