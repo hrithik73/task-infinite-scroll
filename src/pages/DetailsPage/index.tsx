@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useParams } from "react-router-dom"
+
 import Card from "../../components/Card"
 import Loading from "../../components/Loading"
 import useFetch from "../../hooks/useFetch"
-
 import "./index.scss"
 
 const DetailsPage = () => {
   const { data, loading, fetchData } = useFetch()
-  console.log(data)
   const { id } = useParams()
 
   useEffect(() => {
@@ -20,6 +19,9 @@ const DetailsPage = () => {
   }
   return (
     <div className="detailContainer">
+      <button className="backButton" onClick={() => window.history.back()}>
+        👈 Back
+      </button>
       <Card imgUrl={data.download_url} id={data.id} auther={data.author} />
     </div>
   )

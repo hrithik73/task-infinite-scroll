@@ -5,13 +5,15 @@ type CardProps = {
   id: string
   auther: string
   imgUrl: string
+  isChoosen?: boolean
 }
-const Card = ({ id, auther, imgUrl }: CardProps) => {
+const Card = ({ id, auther, imgUrl, isChoosen }: CardProps) => {
   return (
     <div className="cardContainer">
       <Link to={`/info/${id}`} className="link">
         <img className="img" src={imgUrl} alt="" />
         <p className="auther">📸 {auther}</p>
+        {isChoosen && <h3>I am the Choosen One</h3>}
       </Link>
     </div>
   )
