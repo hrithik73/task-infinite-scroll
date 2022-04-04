@@ -27,6 +27,7 @@ const Home = () => {
     // Set a timeout to run after scrolling ends
     isScrolling = setTimeout(function () {
       // Run the callback
+      console.log("stopped scrolling")
       setStopped(true)
       console.log(window)
     }, 5000)
@@ -41,7 +42,7 @@ const Home = () => {
 
   return (
     <div className="home_container">
-      <h1>Infinite Scrolling Event</h1>
+      <h1>Infinite Scrolling</h1>
       {data.map((item: any, idx: any) => {
         return (
           <Card
@@ -50,7 +51,7 @@ const Home = () => {
             imgUrl={item.download_url}
             auther={item.author}
             isChoosen={
-              (stopped && idx === data.length - 1) || idx === data.length - 2
+              stopped && idx === (data.length - 1 || idx === data.length - 2)
             }
           />
         )

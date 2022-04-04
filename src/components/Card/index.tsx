@@ -13,7 +13,7 @@ const Card = ({ id, auther, imgUrl, isChoosen }: CardProps) => {
       <Link to={`/info/${id}`} className="link">
         <img className="img" src={imgUrl} alt="" />
         <p className="auther">📸 {auther}</p>
-        {isChoosen && <h3>I am the Choosen One</h3>}
+        {isChoosen && <h3>I am the Choosen One {id}</h3>}
       </Link>
     </div>
   )
