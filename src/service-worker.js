@@ -21,7 +21,6 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 
 // eslint-disable-next-line no-restricted-globals
-const ignored = self.__WB_MANIFEST;
 
 precacheAndRoute(self.__WB_MANIFEST);
 
