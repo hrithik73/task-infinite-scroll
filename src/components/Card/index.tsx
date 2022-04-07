@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import "./index.scss"
+import "./style.scss"
 
 type CardProps = {
   id: string

@@ -1,4 +1,4 @@
-import "./index.scss"
+import "./style.scss"
 
 const Loading = () => {
   return <div className="loader"></div>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Card from "../../components/Card"
 import Loading from "../../components/Loading"
 import useFetch from "../../hooks/useFetch"
-import "./index.scss"
+import "./style.scss"
 
 const Home = () => {
   let isScrolling: any = null

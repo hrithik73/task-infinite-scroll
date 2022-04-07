@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import Card from "../../components/Card"
 import Loading from "../../components/Loading"
 import useFetch from "../../hooks/useFetch"
-import "./index.scss"
+import "./style.scss"
 
 const DetailsPage = () => {
   const { data, loading, fetchData } = useFetch()
